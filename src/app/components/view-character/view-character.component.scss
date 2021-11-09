@@ -1,0 +1,9 @@
+.view-character-container {
+    .episode-links {
+        display: flex;
+        flex-wrap: wrap;
+        a {
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<h1 class="title-characters">Personajes de Rick & Morty</h1>
+
+<div class="row row-cols-1 row-cols-md-5 g-4">
+  <div class="col" *ngFor="let character of characters.results let i = index">
+      <div class="card">
+        <a [routerLink]="['/ver-personajes', i + 1]">
+          <img src="{{ character?.image }}" class="card-img-top" alt="..." >
+        </a>
+        <div class="card-body">
+          <h5 class="card-title"> {{ character?.name }} </h5>
+          <h6> {{ character?.gender }} - {{ character?.species }} - {{ character?.status }} </h6>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-outline-danger btn-block" (click)="nextCharacter(characters.info.next)">Siguiente</button>
+</div>

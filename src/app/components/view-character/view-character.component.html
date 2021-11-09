@@ -1,0 +1,24 @@
+<h1 class="text-white">Nombre del Personaje: {{ ViewInfoCharacter.name| uppercase }} - <small>Fecha de creación: {{ ViewInfoCharacter.created | date:'y' }} </small></h1>
+<hr class="text-white">
+
+<div class="row view-character-container">
+    <div class="col-md-4">
+        <img src="{{ ViewInfoCharacter.image }}" class="img-fluid" alt="">
+        <br><br>
+        <a [routerLink]="['/home']" class="btn btn-outline-danger btn-block">Regresar...</a>
+    </div>
+
+    <div class="col-md-8">
+        <h4 class="text-white"> Especie: {{ ViewInfoCharacter.species }} </h4>
+        <h4 class="text-white"> Genero: {{ ViewInfoCharacter.gender }} </h4>
+        <h4 class="text-white"> Origen: {{ ViewInfoCharacter.location.name }} </h4>
+        <hr class="text-white">
+        <h4 class="text-white">Episodios en los que aparece:</h4>
+        <div class="episode-links">
+            <ul *ngFor="let episode of ViewInfoCharacter.episode">
+                <li> <a class="text-white" [href]="episode">{{episode}}</a> </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
